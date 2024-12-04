@@ -8,11 +8,12 @@ public class BasePage {
 
     public static WebDriver driver;
 
-    public void set(WebDriver driver){
+    public void setDriver(WebDriver driver){
         BasePage.driver=driver;
     }
 
     protected WebElement find(By locator){
+
         return driver.findElement(locator);
     }
 
@@ -22,6 +23,7 @@ public class BasePage {
     }
 
     protected void click(By locator){
+
         find(locator).click();
     }
 
