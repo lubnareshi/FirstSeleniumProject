@@ -10,7 +10,7 @@ public class LoginPage extends BasePage {
     private By errorMessage = By.xpath("#login_button_container h3");
 
 
-    public void serUsername(String username){
+    public void setUsername(String username){
         set(usernameField, username);
 
     }
@@ -19,7 +19,19 @@ public class LoginPage extends BasePage {
         set(passwordField, password);
     }
 
-    public void clickLoginButton(){
+    public ProductsPage clickLoginButton(){
+        click(loginButton);
+        return new ProductsPage();
+    }
 
+    public ProductsPage logIntoApplication(String username, String password){
+        setUsername(username);
+        setPassword(password);
+        return  clickLoginButton();
+    }
+
+    public String getErrorMessage(){
+        return find(errorMessage).getText();
     }
 }
+
