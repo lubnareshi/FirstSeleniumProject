@@ -31,11 +31,14 @@ public class FirstSeleniumTest {
         WebElement username = driver.findElement(By.name("username"));
         username.sendKeys("Admin");
 
+//        var password = driver.findElement(By.name("password"));
         WebElement password = driver.findElement(By.name("password"));
         password.sendKeys("admin123");
 
         driver.findElement(By.tagName("button")).click();
+
         Thread.sleep(2000);
+
         String actualResult = driver.findElement(By.tagName("h6")).getText();
         String expectedResult = "Dashboard";
         Assert.assertEquals(actualResult, expectedResult);
