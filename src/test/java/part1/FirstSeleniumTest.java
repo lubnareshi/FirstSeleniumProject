@@ -22,22 +22,22 @@ public class FirstSeleniumTest {
 
     @AfterClass
     public void tearDown() {
-//        driver.quit();          // to close the browser
+        driver.quit();          // to close the browser
     }
 
     @Test
     public void testLoggingIntoApplication() throws InterruptedException {
+
         Thread.sleep(2000);
         WebElement username = driver.findElement(By.name("username"));
-        username.sendKeys("Admin");
+        var password = driver.findElement(By.name("password"));
 
-//        var password = driver.findElement(By.name("password"));
-        WebElement password = driver.findElement(By.name("password"));
+        username.sendKeys("Admin");
         password.sendKeys("admin123");
 
         driver.findElement(By.tagName("button")).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(6000);
 
         String actualResult = driver.findElement(By.tagName("h6")).getText();
         String expectedResult = "Dashboard";

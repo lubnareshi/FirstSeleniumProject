@@ -20,7 +20,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get(url);
         basePage = new BasePage();
-        basePage.setDriver(driver);
+        basePage.setDriver(driver);             // think of it as "constructor" for now.
         loginPage = new LoginPage();
     }
 

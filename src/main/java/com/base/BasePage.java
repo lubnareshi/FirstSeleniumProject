@@ -18,13 +18,13 @@ public class BasePage {
     }
 
     protected void set(By locator, String text){
-        find(locator).clear();
-        find(locator).sendKeys(text);
+        find(locator).clear();                          // .findElement();
+        find(locator).sendKeys(text);                   // .sendKeys();
     }
 
     protected void click(By locator){
 
-        find(locator).click();
+        find(locator).click();                          // .findElement().click();
     }
 
     public static void delay(int milliseconds) {
